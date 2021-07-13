@@ -250,5 +250,5 @@ public void querryinsert(string name,int ownerOnr,int intONR)
 
 The reason of this proccess is to make it easier for user to enter informations on the _add debt_ page
 
-[!Image of AddDebt] (https://github.com/FatiGurqiti/odeWPF/blob/master/img/2.bmp)
+![Image of AddDebt](https://github.com/FatiGurqiti/odeWPF/blob/master/img/2.bmp)
 
