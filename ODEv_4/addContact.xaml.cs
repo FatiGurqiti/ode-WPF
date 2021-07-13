@@ -60,11 +60,12 @@ namespace ODEv_4
             var con = new MySqlConnection(MyConnection2);
             con.Open();
 
-            //var stm = "select name from ode.account where ONR = '" + ONR + "';";
             var stm = quer;
             var cmd = new MySqlCommand(stm, con);
 
             var result = cmd.ExecuteScalar().ToString();
+
+            con.Close();
 
             return result;
         }
@@ -114,10 +115,12 @@ namespace ODEv_4
                     int intONR = Int32.Parse(strONR);
 
                     if (IfContactExists(intONR))
-                    { MessageBox.Show("New person has been added to your contact.Please check it on the Contact section");
+                    {
 
                       string name =  querry("select name from ode.account where ONR = '" + intONR + "';");
-                     
+
+                        MessageBox.Show(name + " has been added to your contact.Please check it on the Contact section");
+
                         querryinsert(name, ownerOnr, intONR);
                        
                     }

@@ -62,8 +62,9 @@ namespace ODE
 
             var result = cmd.ExecuteScalar().ToString();
             if (result == "1") { return true; }
-            else { return false; }
-
+            else { return false;
+                con.Close();
+            }
 
         }  
 
