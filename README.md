@@ -119,8 +119,10 @@ If all is correct it has additional checks too see if the given mail and pin mat
  ```
        
   If so,it directs user to the main page
+  
+  <br/>
         
-        ```
+```
         
         SignUp SU = new SignUp();
             if (SU.IfEmailExists(mail))
@@ -137,7 +139,8 @@ If all is correct it has additional checks too see if the given mail and pin mat
                 MessageBox.Show("Wrong mail adress or pin");
             }
             
-            ```
+```
+<br/>
 
 Once logged in,you can see your **ONR** number on the right corner of the screen under your name.This is needed to add people to your contact which you can view on the left side of the screen.
 
