@@ -257,10 +257,11 @@ This was user can see all of his/her contact and won't interfere thus making use
 **View Debts** and **Views Loans** pages are using _SQL querries_ to list everything.Addtionally on **View Debts** you can use delete action.
 These are created dynamicly in a _ScrollViewer_ so that you can scroll to see all of the debts/loans.
 
+</br>
 
-`     string minDNR = ac.querry("select MIN(DNR) from ode.dept where ONR = '" + onr + "'  ");
-            string maxDNR = ac.querry("select MAX(DNR) from ode.dept where ONR = '" + onr + "'  "); 
-            `
+`     string minDNR = ac.querry("select MIN(DNR) from ode.dept where ONR = '" + onr + "'  ");  `
+`    string maxDNR = ac.querry("select MAX(DNR) from ode.dept where ONR = '" + onr + "'  ");   `
+           
 </br>
 
 ```
