@@ -39,7 +39,9 @@ namespace ODEv_4
             var result = cmd.ExecuteScalar().ToString();
 
             double doubleresult = Convert.ToDouble(result);
+            con.Close();
             return doubleresult;
+
         }
 
         public bool IfDNRexists(int DNR, int ONR)
@@ -52,6 +54,7 @@ namespace ODEv_4
             var cmd = new MySqlCommand(stm, con);
 
             var result = cmd.ExecuteScalar().ToString();
+            con.Close();
             if (result == "1") { return true; }
             else { return false; }
 

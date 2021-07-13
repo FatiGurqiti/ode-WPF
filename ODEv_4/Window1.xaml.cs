@@ -41,7 +41,7 @@ namespace ODEv_4
             var cmd = new MySqlCommand(stm, con);
 
             var result = cmd.ExecuteScalar().ToString();
-
+            con.Close();
             return result;}
         public string ONRquerry(string mail)
         {
@@ -53,7 +53,7 @@ namespace ODEv_4
             var cmd = new MySqlCommand(stm, con);
 
             var result = cmd.ExecuteScalar().ToString();
-
+            con.Close();
             return result;
         }
         public bool IfLNRexists(int LNR, int ONR)
@@ -66,6 +66,7 @@ namespace ODEv_4
             var cmd = new MySqlCommand(stm, con);
 
             var result = cmd.ExecuteScalar().ToString();
+            con.Close();
             if (result == "1") { return true; }
             else { return false; }
         }
@@ -80,7 +81,7 @@ namespace ODEv_4
 
             
             var result = cmd.ExecuteScalar().ToString();
-
+            con.Close();
 
             return result;
         }
@@ -98,8 +99,8 @@ namespace ODEv_4
 
                 var result = cmd.ExecuteScalar().ToString();
                 int Intresult = Int32.Parse(result);
-
-                return Intresult;
+            con.Close();
+            return Intresult;
 
             }
 
@@ -115,7 +116,7 @@ namespace ODEv_4
 
             var result = cmd.ExecuteScalar().ToString();
             int Intresult = Int32.Parse(result);
-
+            con.Close();
             return Intresult;
         }
 
@@ -131,7 +132,7 @@ namespace ODEv_4
             var result = cmd.ExecuteScalar().ToString();
 
             int Intresult = Int32.Parse(result);
-
+            con.Close();
             return Intresult;
         }
 
@@ -146,7 +147,7 @@ namespace ODEv_4
 
             var result = cmd.ExecuteScalar().ToString();
 
-
+            con.Close();
             return result;
         }
 
@@ -161,7 +162,7 @@ namespace ODEv_4
 
             var result = cmd.ExecuteScalar().ToString();
 
-           // int Intresult = Int32.Parse(result);
+            con.Close();
 
             return result;
         }
@@ -175,6 +176,7 @@ namespace ODEv_4
             var cmd = new MySqlCommand(stm, con);
 
             var result = cmd.ExecuteScalar().ToString();
+            con.Close();
             if (result == "1") { return true; }
             else { return false; }
 

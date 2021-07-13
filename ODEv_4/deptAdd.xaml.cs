@@ -36,7 +36,7 @@ namespace ODEv_4
 
             var result = cmd.ExecuteScalar().ToString();
             int intresult = Int32.Parse(result);
-
+            con.Close();
             return intresult;
 
             
@@ -90,7 +90,7 @@ namespace ODEv_4
 
             var result = cmd.ExecuteScalar().ToString();
             int Intresult = Int32.Parse(result);
-
+            con.Close();
             return Intresult;
 
         }

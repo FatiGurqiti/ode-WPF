@@ -48,6 +48,7 @@ namespace ODEv_4
             var cmd = new MySqlCommand(stm, con);
 
             var result = cmd.ExecuteScalar().ToString();
+            con.Close();
             if (result == "1") { return true; }
             else { return false; }
 

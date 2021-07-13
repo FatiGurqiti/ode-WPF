@@ -59,9 +59,9 @@ namespace ODE
 
             var result = cmd.ExecuteScalar().ToString();
             int Intresult = Int32.Parse(result);
-
+            con.Close();
             if (Intresult == pin) return true;
-
+           
             else return false;
         }
 
@@ -105,21 +105,27 @@ namespace ODE
 
 
 
-
-
-            SignUp SU = new SignUp();
-            if (SU.IfEmailExists(mail))
-
+            try
             {
 
-                if (ifPinCorrect(mail, Int32.Parse(pin))) openMainScreen(mail);
-                else MessageBox.Show("Wrong mail adress or pin");
+                SignUp SU = new SignUp();
+                if (SU.IfEmailExists(mail))
 
+                {
+
+                    if (ifPinCorrect(mail, Int32.Parse(pin))) openMainScreen(mail);
+                    else MessageBox.Show("Wrong mail adress or pin");
+
+                }
+                //log in
+                else
+                {
+                    MessageBox.Show("Wrong mail adress or pin");
+                }
             }
-            //log in
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Wrong mail adress or pin");
+                MessageBox.Show(ex.Message);
             }
 
         }
