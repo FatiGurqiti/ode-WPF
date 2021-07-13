@@ -18,7 +18,8 @@ _E-mail_ will not accept any given input if it isn't on correct e-mail format, _
 These are being checked by simple algorithms.
 
 
-`public void isSpecial(string name)
+`
+public void isSpecial(string name)
         {
 
             Regex rgx = new Regex("[^A-Za-z0-9]");
@@ -32,6 +33,7 @@ These are being checked by simple algorithms.
             }
 
         }
+        
 `
 
 
