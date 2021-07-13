@@ -252,3 +252,51 @@ The reason of this proccess is to make it easier for user to enter informations 
 
 ![Image of AddDebt](https://github.com/FatiGurqiti/odeWPF/blob/master/img/2.bmp)
 
+This was user can see all of his/her contact and won't interfere thus making users imposible to add debt to the people who are not on their contact.
+
+**View Debts** and **Views Loans** pages are using _SQL querries_ to list everything.Addtionally on **View Debts** you can use delete action.
+These are created dynamicly in a _ScrollViewer_ so that you can scroll to see all of the debts/loans.
+
+
+`     string minDNR = ac.querry("select MIN(DNR) from ode.dept where ONR = '" + onr + "'  ");
+            string maxDNR = ac.querry("select MAX(DNR) from ode.dept where ONR = '" + onr + "'  "); 
+            `
+</br>
+
+```
+  for (int i = intMinDNR; i <= intMaxDNR; ++i)
+            {
+                if (IfDNRexists(i, onr))
+                {
+
+                    ammount = doublequerry("select ammount from ode.dept where ONR = '" + onr + "' and DNR = '" + i + "' ");
+                    currency = ac.querry("select currency from ode.dept where ONR = '" + onr + "' and DNR = '" + i + "'  ");
+                    to = ac.querry("select deptOwnerONR from ode.dept where ONR = '" + onr + "' and DNR = '" + i + "'   ");
+                    strlabel = ac.querry("select label from ode.dept where ONR = '" + onr + "' and DNR = '" + i + "'   ");
+
+                    int intTo = Int32.Parse(to);
+                    deptOwnerName = ac.querry("select name from ode.account where ONR = '" + intTo + "'  ");
+
+                    Label label = new Label();
+                    label.Height = 50;
+                    label.Width = 644;
+                    label.HorizontalAlignment = HorizontalAlignment.Left;
+                    label.VerticalAlignment = VerticalAlignment.Top;
+                    label.Content = deptOwnerName + "\t owes you " + ammount + " " + currency + " with label of : " + strlabel;
+                    label.Margin = new Thickness(50, location, 0, 0);
+                    grid1.Children.Add(label);
+                    location += 34;
+
+                    Button button = new Button();
+                    button.Content = "Delete  " + i.ToString() + "  ";
+                    button.HorizontalAlignment = HorizontalAlignment.Left; ;
+                    button.VerticalAlignment = VerticalAlignment.Top;
+                    button.Width = 75;
+                    button.Margin = new Thickness(600, buttonlocation, 0, 0);
+                    button.AddHandler(Button.ClickEvent, new RoutedEventHandler(button1_Click));
+                    grid1.Children.Add(button);
+                    buttonlocation += 34;
+
+
+                }
+                ```
