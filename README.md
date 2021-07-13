@@ -263,7 +263,8 @@ These are created dynamicly in a _ScrollViewer_ so that you can scroll to see al
 <br/>
 
 `     string minDNR = ac.querry("select MIN(DNR) from ode.dept where ONR = '" + onr + "'  ");  `<br/>
-`    string maxDNR = ac.querry("select MAX(DNR) from ode.dept where ONR = '" + onr + "'  ");   `
+`     string maxDNR = ac.querry("select MAX(DNR) from ode.dept where ONR = '" + onr + "'  ");  `<br/>
+`     string coutRow = "select count(DNR) from ode.dept where ONR = '" + onr + "'  ";          `<br/>
            
 <br/>
 
@@ -302,5 +303,10 @@ These are created dynamicly in a _ScrollViewer_ so that you can scroll to see al
                     buttonlocation += 34;
 
 
-                }
-                ```
+            
+            }
+```
+
+<br/>
+
+
