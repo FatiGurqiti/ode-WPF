@@ -18,7 +18,7 @@ _E-mail_ will not accept any given input if it isn't on correct e-mail format, _
 These are being checked by simple algorithms.
 
 `
-
+`
 
 public void isSpecial(string name)
         {
@@ -35,6 +35,8 @@ public void isSpecial(string name)
 
         }
 `
+`
+
 If users enteres all the informations correctly the program will make a SQL querry to see if the e-mail is already taken.
 
 ``
