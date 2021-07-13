@@ -1,0 +1,37 @@
+﻿<Window x:Class="ODE.SignUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ODE"
+        mc:Ignorable="d"
+        Title="Öde Sign Up" Height="574" Width="800">
+    
+    
+    <Grid Margin="0,0,0,0">
+     
+        <TextBox HorizontalAlignment="Left" Margin="305,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Height="32" FontSize="18" Name="nameText"/>
+        <TextBox HorizontalAlignment="Left" Margin="305,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="239" Height="32" FontSize="18" Name="mailText"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="305,357,0,0" VerticalAlignment="Top" Width="239" Height="33" FontSize="18" Cursor="AppStarting" Name="pinText" />
+        <TextBlock HorizontalAlignment="Left" Margin="193,221,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Margin="193,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"><Run Text="Mail"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="193,357,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"><Run Text="Pin"/><LineBreak/><Run/></TextBlock>
+        <Button Content="Sign up" HorizontalAlignment="Left" Margin="316,468,0,0" VerticalAlignment="Top" Height="40" Width="168" FontSize="16" Click="Button_Click_1"/>
+        <Button Content="
+" HorizontalAlignment="Left" Margin="37,48,0,0" VerticalAlignment="Top" Height="34" Width="44" Click="Button_Click">
+
+            <Button.Background>
+                <ImageBrush ImageSource="C:\Users\fati-\OneDrive\Masaüstü\tools\backButton.png"/>
+            </Button.Background>
+
+        </Button>
+        <Image HorizontalAlignment="Left" Height="100" Margin="238,48,0,0" VerticalAlignment="Top" Width="324" Source="C:\Users\fati-\source\repos\ode1\ode1\tools/logoLarge.png" RenderTransformOrigin="0.17,0.818"/>
+
+    </Grid>
+
+
+
+ 
+
+
+</Window>

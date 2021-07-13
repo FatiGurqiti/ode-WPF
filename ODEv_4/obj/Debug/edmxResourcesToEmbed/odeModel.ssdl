@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="odeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="ONR" />
+    </Key>
+    <Property Name="ONR" Type="int" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="60" />
+    <Property Name="pin" Type="int" />
+    <Property Name="name" Type="varchar" MaxLength="64" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="LNR" />
+    </Key>
+    <Property Name="LNR" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="255" />
+    <Property Name="ONR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="dept">
+    <Key>
+      <PropertyRef Name="DNR" />
+    </Key>
+    <Property Name="DNR" Type="int" Nullable="false" />
+    <Property Name="ammount" Type="int" />
+    <Property Name="label" Type="varchar" MaxLength="255" />
+    <Property Name="currency" Type="varchar" MaxLength="4" />
+    <Property Name="ONR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="loan">
+    <Key>
+      <PropertyRef Name="LNR" />
+    </Key>
+    <Property Name="LNR" Type="int" Nullable="false" />
+    <Property Name="ammount" Type="int" />
+    <Property Name="label" Type="varchar" MaxLength="255" />
+    <Property Name="currency" Type="varchar" MaxLength="4" />
+    <Property Name="ONR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__contact__ONR__3E52440B">
+    <End Role="account" Type="Self.account" Multiplicity="1" />
+    <End Role="contact" Type="Self.contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="ONR" />
+      </Principal>
+      <Dependent Role="contact">
+        <PropertyRef Name="ONR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__dept__ONR__38996AB5">
+    <End Role="account" Type="Self.account" Multiplicity="1" />
+    <End Role="dept" Type="Self.dept" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="ONR" />
+      </Principal>
+      <Dependent Role="dept">
+        <PropertyRef Name="ONR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__loan__ONR__3B75D760">
+    <End Role="account" Type="Self.account" Multiplicity="1" />
+    <End Role="loan" Type="Self.loan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="ONR" />
+      </Principal>
+      <Dependent Role="loan">
+        <PropertyRef Name="ONR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="odeModelStoreContainer">
+    <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dept" EntityType="Self.dept" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loan" EntityType="Self.loan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__contact__ONR__3E52440B" Association="Self.FK__contact__ONR__3E52440B">
+      <End Role="account" EntitySet="account" />
+      <End Role="contact" EntitySet="contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__dept__ONR__38996AB5" Association="Self.FK__dept__ONR__38996AB5">
+      <End Role="account" EntitySet="account" />
+      <End Role="dept" EntitySet="dept" />
+    </AssociationSet>
+    <AssociationSet Name="FK__loan__ONR__3B75D760" Association="Self.FK__loan__ONR__3B75D760">
+      <End Role="account" EntitySet="account" />
+      <End Role="loan" EntitySet="loan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

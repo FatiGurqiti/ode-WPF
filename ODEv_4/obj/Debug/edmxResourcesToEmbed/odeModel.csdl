@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="odeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="ONR" />
+    </Key>
+    <Property Name="ONR" Type="Int32" Nullable="false" />
+    <Property Name="mail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="pin" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="contacts" Relationship="Self.FK__contact__ONR__3E52440B" FromRole="account" ToRole="contact" />
+    <NavigationProperty Name="depts" Relationship="Self.FK__dept__ONR__38996AB5" FromRole="account" ToRole="dept" />
+    <NavigationProperty Name="loans" Relationship="Self.FK__loan__ONR__3B75D760" FromRole="account" ToRole="loan" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="LNR" />
+    </Key>
+    <Property Name="LNR" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ONR" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="account" Relationship="Self.FK__contact__ONR__3E52440B" FromRole="contact" ToRole="account" />
+  </EntityType>
+  <EntityType Name="dept">
+    <Key>
+      <PropertyRef Name="DNR" />
+    </Key>
+    <Property Name="DNR" Type="Int32" Nullable="false" />
+    <Property Name="ammount" Type="Int32" />
+    <Property Name="label" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="currency" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ONR" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="account" Relationship="Self.FK__dept__ONR__38996AB5" FromRole="dept" ToRole="account" />
+  </EntityType>
+  <EntityType Name="loan">
+    <Key>
+      <PropertyRef Name="LNR" />
+    </Key>
+    <Property Name="LNR" Type="Int32" Nullable="false" />
+    <Property Name="ammount" Type="Int32" />
+    <Property Name="label" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="currency" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ONR" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="account" Relationship="Self.FK__loan__ONR__3B75D760" FromRole="loan" ToRole="account" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__contact__ONR__3E52440B">
+    <End Role="account" Type="Self.account" Multiplicity="1" />
+    <End Role="contact" Type="Self.contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="ONR" />
+      </Principal>
+      <Dependent Role="contact">
+        <PropertyRef Name="ONR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__dept__ONR__38996AB5">
+    <End Role="account" Type="Self.account" Multiplicity="1" />
+    <End Role="dept" Type="Self.dept" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="ONR" />
+      </Principal>
+      <Dependent Role="dept">
+        <PropertyRef Name="ONR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__loan__ONR__3B75D760">
+    <End Role="account" Type="Self.account" Multiplicity="1" />
+    <End Role="loan" Type="Self.loan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="ONR" />
+      </Principal>
+      <Dependent Role="loan">
+        <PropertyRef Name="ONR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="odeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="accounts" EntityType="Self.account" />
+    <EntitySet Name="contacts" EntityType="Self.contact" />
+    <EntitySet Name="depts" EntityType="Self.dept" />
+    <EntitySet Name="loans" EntityType="Self.loan" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <AssociationSet Name="FK__contact__ONR__3E52440B" Association="Self.FK__contact__ONR__3E52440B">
+      <End Role="account" EntitySet="accounts" />
+      <End Role="contact" EntitySet="contacts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__dept__ONR__38996AB5" Association="Self.FK__dept__ONR__38996AB5">
+      <End Role="account" EntitySet="accounts" />
+      <End Role="dept" EntitySet="depts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__loan__ONR__3B75D760" Association="Self.FK__loan__ONR__3B75D760">
+      <End Role="account" EntitySet="accounts" />
+      <End Role="loan" EntitySet="loans" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="odeModelStoreContainer" CdmEntityContainer="odeEntities">
+    <EntitySetMapping Name="accounts">
+      <EntityTypeMapping TypeName="odeModel.account">
+        <MappingFragment StoreEntitySet="account">
+          <ScalarProperty Name="ONR" ColumnName="ONR" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="odeModel.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="LNR" ColumnName="LNR" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="ONR" ColumnName="ONR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="depts">
+      <EntityTypeMapping TypeName="odeModel.dept">
+        <MappingFragment StoreEntitySet="dept">
+          <ScalarProperty Name="DNR" ColumnName="DNR" />
+          <ScalarProperty Name="ammount" ColumnName="ammount" />
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="ONR" ColumnName="ONR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loans">
+      <EntityTypeMapping TypeName="odeModel.loan">
+        <MappingFragment StoreEntitySet="loan">
+          <ScalarProperty Name="LNR" ColumnName="LNR" />
+          <ScalarProperty Name="ammount" ColumnName="ammount" />
+          <ScalarProperty Name="label" ColumnName="label" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="ONR" ColumnName="ONR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="odeModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
