@@ -93,3 +93,48 @@ Once all the checks are done successfully,program takes all the informations fro
                 }
 
 ```
+
+Once the Sign up process done,you may continue to the main page.On click event of the _Sign in_ button.It checks the same things as _Sign Up_.
+If all is correct it has additional checks too see if the given mail and pin matches.
+
+```
+
+ private bool ifPinCorrect(string mail, int pin)
+        {
+            string MyConnection2 = "datasource=localhost;port=3306;username=root";
+            var con = new MySqlConnection(MyConnection2);
+            con.Open();
+
+            var stm = "select pin from ode.account where mail = '" + mail + "';";
+            var cmd = new MySqlCommand(stm, con);
+
+            var result = cmd.ExecuteScalar().ToString();
+            int Intresult = Int32.Parse(result);
+
+            if (Intresult == pin) return true;
+
+            else return false;
+        }
+        
+        ```
+        
+        If so,it directs user to the main page
+        
+        ```
+        
+        SignUp SU = new SignUp();
+            if (SU.IfEmailExists(mail))
+
+            {
+
+                if (ifPinCorrect(mail, Int32.Parse(pin))) openMainScreen(mail);
+                else MessageBox.Show("Wrong mail adress or pin");
+
+            }
+            //log in
+            else
+            {
+                MessageBox.Show("Wrong mail adress or pin");
+            }
+            
+            ```
