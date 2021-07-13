@@ -19,6 +19,7 @@ These are being checked by simple algorithms.
 
 
 `
+
 public void isSpecial(string name)
         {
 
@@ -39,7 +40,7 @@ public void isSpecial(string name)
 
 If users enteres all the informations correctly the program will make a SQL querry to see if the e-mail is already taken.
 
-``
+`
 public bool IfEmailExists(string mail)
         {
             string MyConnection2 = "datasource=localhost;port=3306;username=root";
@@ -56,11 +57,11 @@ public bool IfEmailExists(string mail)
             }
 
         } 
-``
+`
 
 Once all the checks are done successfully,program takes all the informations from inputs and makes a SQL input
 
-```
+`
  if (!IfEmailExists(mail))
 
                 {
@@ -89,4 +90,4 @@ Once all the checks are done successfully,program takes all the informations fro
                     MessageBox.Show("This mail has already been taken");
                 }
 
-```
+`
