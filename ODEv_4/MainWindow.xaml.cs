@@ -73,9 +73,7 @@ namespace ODE
         private void BtnClickSignUpPage(object sender, RoutedEventArgs e)
         {
             SignUp su = new SignUp();
-            //su.Show();
             su.ShowDialog();
-            this.Close();
         }
 
 

@@ -128,7 +128,11 @@ namespace ODEv_4
             string minDNR = ac.querry("select MIN(DNR) from ode.dept where ONR = '" + onr + "'  ");
             string maxDNR = ac.querry("select MAX(DNR) from ode.dept where ONR = '" + onr + "'  ");
 
-            int intMinDNR = Int32.Parse(minDNR);
+
+            if (!String.IsNullOrEmpty(minDNR) && !String.IsNullOrEmpty(maxDNR))
+            {
+
+                int intMinDNR = Int32.Parse(minDNR);
             int intMaxDNR = Int32.Parse(maxDNR);
 
 
@@ -187,7 +191,7 @@ namespace ODEv_4
 
             }
 
-
+        }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

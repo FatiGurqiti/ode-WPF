@@ -39,7 +39,7 @@ namespace ODEv_4
 
 
         }
-        public viewLoan(string mail,int onr)
+        public viewLoan(string mail, int onr)
         {
             InitializeComponent();
 
@@ -56,6 +56,8 @@ namespace ODEv_4
 
             string minDNR = ac.querry("select MIN(DNR) from ode.dept where deptOwnerONR = '" + onr + "'  ");
             string maxDNR = ac.querry("select MAX(DNR) from ode.dept where deptOwnerONR = '" + onr + "'  ");
+
+              if(!String.IsNullOrEmpty(minDNR) && !String.IsNullOrEmpty(maxDNR)){
 
             int intMinDNR = Int32.Parse(minDNR);
             int intMaxDNR = Int32.Parse(maxDNR);
@@ -94,7 +96,7 @@ namespace ODEv_4
                     label.Width = 644;
                     label.HorizontalAlignment = HorizontalAlignment.Left;
                     label.VerticalAlignment = VerticalAlignment.Top;
-                    label.Content =  "You owe  " + ammount + " " + currency +" to: "+ Name +  " with label : " + strlabel;
+                    label.Content = "You owe  " + ammount + " " + currency + " to: " + Name + " with label : " + strlabel;
                     label.Margin = new Thickness(50, location, 0, 0);
                     grid1.Children.Add(label);
                     location += 34;
@@ -104,6 +106,7 @@ namespace ODEv_4
                 }
 
             }
+        }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
