@@ -41,7 +41,7 @@ These are being checked by simple algorithms.
 
 If users enteres all the informations correctly the program will make a SQL querry to see if the e-mail is already taken.
 
-`
+```
 
   public bool IfEmailExists(string mail)
         {
@@ -59,11 +59,11 @@ If users enteres all the informations correctly the program will make a SQL quer
             }
 
         } 
-`
+```
 
 Once all the checks are done successfully,program takes all the informations from inputs and makes a SQL input
 
-`
+```
  if (!IfEmailExists(mail))
 
                 {
@@ -92,4 +92,4 @@ Once all the checks are done successfully,program takes all the informations fro
                     MessageBox.Show("This mail has already been taken");
                 }
 
-`
+```
