@@ -7,13 +7,6 @@
         mc:Ignorable="d"
         Title="Add Dept" Height="450" Width="800">
     <Grid>
-        <Button Content=" " HorizontalAlignment="Left" Margin="35,20,0,0" VerticalAlignment="Top" Height="34" Width="44" Click="Button_Click">
-
-            <Button.Background>
-                <ImageBrush ImageSource="C:\Users\fati-\OneDrive\Masaüstü\tools\backButton.png"/>
-            </Button.Background>
-
-        </Button>
         <GroupBox Header="Dept Info" HorizontalAlignment="Left" Height="321" Margin="203,53,0,0" VerticalAlignment="Top" Width="382" RenderTransformOrigin="0.344,0.16">
             <TextBox x:Name="amountText" HorizontalAlignment="Left" Height="23" Margin="134,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </GroupBox>

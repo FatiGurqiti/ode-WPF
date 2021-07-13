@@ -34,11 +34,11 @@ namespace ODE
 
         }
 
-      
 
-       
 
-       
+
+
+
 
         private void openMainScreen(string value)
         {
@@ -61,7 +61,7 @@ namespace ODE
             int Intresult = Int32.Parse(result);
             con.Close();
             if (Intresult == pin) return true;
-           
+
             else return false;
         }
 
@@ -77,62 +77,57 @@ namespace ODE
             su.ShowDialog();
             this.Close();
         }
-        
 
-        
+
+
 
 
 
 
         public void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+
             mail = mailText.Text;
             string pin = pinText.Password.ToString();
 
 
 
-            try
+            if (!String.IsNullOrEmpty(pin) && !String.IsNullOrEmpty(mail))
             {
                 int Intpin = Int32.Parse(pin);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+             try   {
 
+                    SignUp SU = new SignUp();
+                    if (SU.IfEmailExists(mail))
 
+                    {
 
+                        if (ifPinCorrect(mail, Int32.Parse(pin))) openMainScreen(mail);
+                        else MessageBox.Show("Wrong mail adress or pin");
 
-
-            try
-            {
-
-                SignUp SU = new SignUp();
-                if (SU.IfEmailExists(mail))
-
-                {
-
-                    if (ifPinCorrect(mail, Int32.Parse(pin))) openMainScreen(mail);
-                    else MessageBox.Show("Wrong mail adress or pin");
-
+                    }
+                    //log in
+                    else
+                    {
+                        MessageBox.Show("Wrong mail adress or pin");
+                    }
                 }
-                //log in
-                else
-                {
-                    MessageBox.Show("Wrong mail adress or pin");
-                }
-            }
             catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Pin and mail cannot be empty");
             }
 
         }
 
 
-       
 
-        
+
+
     }
 }

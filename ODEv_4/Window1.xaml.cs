@@ -252,8 +252,7 @@ namespace ODEv_4
         {
             addContact ac = new addContact(W1mail,onr);
             ac.DataContext = this;
-            ac.Show();
-            this.Close();
+            ac.ShowDialog();
 
 
          
@@ -263,32 +262,28 @@ namespace ODEv_4
         {
             deptAdd da = new deptAdd(W1mail,onr);
             da.DataContext = this;
-            da.Show();
-            this.Close();
+            da.ShowDialog();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             loanAdd la = new loanAdd(W1mail);
             la.DataContext = this;
-            la.Show();
-            this.Close();
+            la.ShowDialog();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             viewDept vd = new viewDept(W1mail,onr);
             vd.DataContext = this;
-            vd.Show();
-            this.Close();
+            vd.ShowDialog();
         }
 
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             viewLoan vl = new viewLoan(W1mail,onr);
             vl.DataContext = this;
-            vl.Show();
-            this.Close();
+            vl.ShowDialog();
         }
     }
 }

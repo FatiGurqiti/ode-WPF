@@ -7,13 +7,6 @@
         mc:Ignorable="d"
         Title="Dept View" Height="609.6" Width="800">
     <Grid Margin="0,0,-0.4,5">
-        <Button Content=" " HorizontalAlignment="Left" Margin="35,20,0,0" VerticalAlignment="Top" Height="34" Width="44" Click="Button_Click">
-
-            <Button.Background>
-                <ImageBrush ImageSource="C:\Users\fati-\OneDrive\Masaüstü\tools\backButton.png"/>
-            </Button.Background>
-
-        </Button>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="87" Margin="281,20,0,0" Stroke="Black" VerticalAlignment="Top" Width="321"/>
         <Label x:Name="totalDeptText" Content="Label" HorizontalAlignment="Center                " VerticalAlignment="Top" Margin="414,73,313.6,0" Width="66" RenderTransformOrigin="0.656,0.453" FontSize="18" FontWeight="Bold"/>
         <Label Content="Total Dept" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="414,28,313.6,0" Width="66"/>

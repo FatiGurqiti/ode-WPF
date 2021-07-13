@@ -6,14 +6,5 @@
         xmlns:local="clr-namespace:ODEv_4"
         mc:Ignorable="d"
         Title="Add Loan" Height="450" Width="800">
-    <Grid>
-        <Button Content=" " HorizontalAlignment="Left" Margin="35,20,0,0" VerticalAlignment="Top" Height="34" Width="44" Click="Button_Click">
-
-            <Button.Background>
-                <ImageBrush ImageSource="C:\Users\fati-\OneDrive\Masaüstü\tools\backButton.png"/>
-            </Button.Background>
-
-        </Button>
-
-    </Grid>
+    <Grid/>
 </Window>

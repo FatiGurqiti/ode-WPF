@@ -72,6 +72,7 @@ namespace ODE
         {
             try
             {
+                
                 var addr = new System.Net.Mail.MailAddress(email);
                 return addr.Address == email;
 
@@ -111,12 +112,14 @@ namespace ODE
             string TextMail = mailText.Text;
             string TextPin = pinText.Password.ToString();
 
+            if (!String.IsNullOrEmpty(TextName) && !String.IsNullOrEmpty(TextMail) && !String.IsNullOrEmpty(TextPin))
+            { 
 
 
 
 
 
-            isSpecial(TextName);
+                isSpecial(TextName);
 
             if (!IsValidEmail(TextMail))
             {
@@ -167,12 +170,16 @@ namespace ODE
                     MessageBox.Show("This mail has already been taken");
                 }
 
-               
+
 
             }
 
 
-
+        }
+            else
+            {
+                MessageBox.Show("All ares must be filled");
+            }
         }
     }
 }

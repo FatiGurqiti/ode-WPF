@@ -107,7 +107,7 @@ namespace ODEv_4
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string strONR = contactONR.Text;
-            if (strONR != null)
+            if (!String.IsNullOrEmpty(strONR))
             {
 
                 try
